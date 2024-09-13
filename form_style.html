@@ -7,6 +7,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>네이버 : 회원가입</title>
+
+    <style>
+        .container {
+            width: 400px;
+            height: 1000px;
+            position: absolute;
+            left: 50%; 
+            margin-left: -150px;
+            top: 25%; 
+            margin-top: -220px;
+        }
+        body{
+            background-color: #F8f9fa;
+        }
+        input[type=text], input[type=email], input[type=password], input[type=date]{
+            width: 95%;
+            padding: 12px 20px;
+            box-sizing: border-box;
+
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+        #id{
+            border-radius: 4px 4px 0px 0px;
+            border: 1px 1px 1px 1px solid rgba(0, 0, 0, 0.1);
+        }
+        #pswd1{
+            border-radius: 0px;
+            margin: -1px 0px 0px;
+        }
+        #pswd2{
+            border-radius: 0px 0px 4px 4px;
+            margin: -1px 0px 0px;
+            margin-bottom: 10px;
+        }
+        #passwordhintQ{
+            border-radius: 4px 4px 0px 0px ;
+        }
+        #hint1{
+            font-size: small;
+            margin: 0px 10px 0px 5px;
+        }
+        #divEmail{
+            padding:5px 0px 0px 0px;
+            width: 100%;
+            height: 30px;
+        }
+        #divName{
+            height: 50px;
+        }
+        #divBirthday{
+            height: 80px;
+        }
+        #birth{
+            font-size: small;
+            
+            margin: 0px 10px 0px 5px;
+        }
+        select{
+            width: 380px;
+            height: 20px;
+            border-radius: 0px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        textarea{
+            width: 374px;
+            border-radius: 0px 0px 4px 4px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            margin: -1px 0px 0px;
+        }
+
+        #nation, #gender{
+            width: 40%;
+            display: inline;
+        }
+        fieldset{
+            background-color: white;
+        }
+        #submit_button{
+            position: absolute;
+            bottom: 10px;
+        }
+        button, select, input[type=date]{
+            cursor: pointer;
+        }
+        #btnJoin{
+            width: 400px;
+            height: 40px;
+            border-radius: 4px;  
+        }
+        #selNationNo{
+            margin-top: 20px;
+        }
+        #bottom{
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <!-- 원래 페이지의 URL -->
@@ -32,20 +129,17 @@
                 <div id="top">
                     <!--아이디 입력받기 type = text -->
                     <div class="form_item user" id="divId">
-                        <input type="text" id="id" name="id" placeholder="아이디" class="input" value="" maxlength="20"/>
-                        <div class="id_naver">@naver.com</div>
+                        <input type="text" id="id" name="id" placeholder="아이디 (@naver.com)" class="input" value="" maxlength="20"/>
                     </div>
-
                     <!--비밀번호 입력받기 type = password -->
                     <div class="form_item lock password" id="divPasswd">
                         <input type="password" id="pswd1" name="pswd1" placeholder="비밀번호" class="input" value="" maxlength="20"/>
-                        <div class="password_info">
-                            <button type="button" class="btn_show hide">
-                                <span class="blind">비밀번호 보기</span>
-                            </button>
-                        </div>
-                        <div>
-                            <label for="passwordhintQ">비밀번호 찾기 질문을 고르세요.</label><br>
+                        <input type="password" id="pswd2" name="pswd2" placeholder="비밀번호 (재입력)" class="input" value="" maxlength="20"/>
+                        
+                        <div id="hint">
+                            <div >
+                                <p id="hint1">비밀번호를 찾을 때 사용할 문제와 정답을 입력하세요</p>
+                            </div>
                             <select name="Q" id="passwordhintQ">
                                 <option value="1">태어난 도시의 이름은?</option>
                                 <option value="2">어릴적 키우던 애완동물의 이름은?</option>
@@ -55,8 +149,6 @@
                             <br>
                             <textarea name="content" cols="40" rows="2" placeholder="정답입력하기"></textarea>
                         </div>
-                        
-                        
                     </div>
 
                     <!--이메일 입력받기 type = email-->
@@ -64,7 +156,7 @@
                         <input type="email" id="email" name="email" placeholder="[선택] 이메일주소 (비밀번호 찾기 등 본인 확인용)" class="input" value="" maxlength="100" />
                     </div>
                 </div>
-                
+                <br>
                 <div id="middle">
                     <!--이름 입력받기 text-->
                     <div class="form_item user" id="divName">
@@ -73,12 +165,12 @@
 
                     <!--생년월일 입력받기 date-->
                     <div class="form_item calendar" id="divBirthday">
-                        생년월일
-                        <input type="date" id="birthdayInput" class="input" />
+                        <div id="birth">생년월일</div>
+                        <input type="date" id="birthdayInput" class="input" placeholder="이름"/>
                     </div>
                                 
                     <!--성별 선택하기 type = radio-->
-                    <fieldset>
+                    <fieldset id="gender">
                         <legend>성별</legend>
                         <input type="radio" id="identityGender1" name="identityGender" value="M" class="blind">
                         <label for="identityGender1">남자</label>
@@ -88,7 +180,7 @@
                     </fieldset>
                                     
                     <!--국적 선택하기 type = radio-->
-                    <fieldset>
+                    <fieldset id="nation">
                         <legend>국적</legend>
                         <input type="radio" id="foreigner1" name="foreigner" value="K" class="blind">
                         <label for="foreigner1">내국인</label>
