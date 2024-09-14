@@ -24,9 +24,9 @@
         <div class="form_content">
             <form id="join_form" method="post" action="/user2/join/end" class="form"></form>
                 <!--체크박스 type = checkbox -->
-                <div class="join_toggle" id="divToggle">
-                    <input type="checkbox" id="join_toggle">
-                    <label for="join_toggle">실명 인증된 아이디로 가입</label>
+                <div id="divToggle">
+                    <input type="checkbox" id="Check1" name="Check1">
+                    <label for="Check1">실명 인증된 아이디로 가입</label>
                 </div>
 
                 <div id="top">
@@ -36,12 +36,12 @@
                     </div>
                     <!--비밀번호 입력받기 type = password -->
                     <div class="form_item lock password" id="divPasswd">
-                        <input type="password" id="pswd1" name="pswd1" placeholder="비밀번호" class="input" value="" maxlength="20"/>
-                        <input type="password" id="pswd2" name="pswd2" placeholder="비밀번호 (재입력)" class="input" value="" maxlength="20"/>
-                        
+                        <input type="password" id="pswd1" name="pswd1" placeholder="비밀번호" class="input" value="" maxlength="20" required/>
+                        <input type="password" id="pswd2" name="pswd2" placeholder="비밀번호 (재입력)" class="input" value="" maxlength="20" required/>
+                        <button type="button">비밀번호 확인</button>
                         <div id="hint">
                             <div >
-                                <p id="hint1">비밀번호를 찾을 때 사용할 문제와 정답을 입력하세요</p>
+                                <p id="hint1">[선택] 비밀번호를 찾을 때 사용할 문제와 정답을 입력하세요</p>
                             </div>
                             <select name="Q" id="passwordhintQ">
                                 <option value="1">태어난 도시의 이름은?</option>
@@ -69,7 +69,7 @@
                     <!--생년월일 입력받기 date-->
                     <div class="form_item calendar" id="divBirthday">
                         <div id="birth">생년월일</div>
-                        <input type="date" id="birthdayInput" class="input" placeholder="이름"/>
+                        <input type="date" id="birthdayInput" class="input" placeholder="이름" name="birthdayInput"/>
                     </div>
                                 
                     <!--성별 선택하기 type = radio-->
@@ -150,19 +150,15 @@
                     <div class="form_item phone" id="divPhoneNo">
                         <input type="tel" id="phoneNo" name="phoneNo" placeholder="휴대전화번호" class="input" value="" maxlength="16" />
                     </div>
-                    <div class="form_item lock">
-                        <input type="tel" id="authNo6" name="authNo6" maxlength="6" placeholder="인증번호 6자리 입력" class="input" value="" />
-                        <button type="button" class="btn_retry" id="resendIdentity">확인</button>
-                    </div>
                 </div>
 
                 <div id="bottom">
                     <!--약관 목록-->
                     <fieldset>
                         <legend>약관 목록</legend>
-
+            
                         <div class="check_circle">
-                            <input type="checkbox" id="agree_all" class="blind">
+                            <input type="checkbox" id="agree_all" name="checkboxes">
                             <label for="agree_all">
                                 <em class="option point">[필수]</em>
                                 <span class="text">인증 약관 전체동의</span>
@@ -170,7 +166,7 @@
                         </div>
                         
                         <div class="check_normal">
-                            <input type="checkbox" id="agree_01" class="blind">
+                            <input type="checkbox" id="agree_01" name="checkboxes">
                             <label for="agree_01">
                                 <span class="text">개인정보 이용</span>
                             </label>
@@ -178,9 +174,9 @@
                                 <span class="blind">약관 전문보기</span>
                             </a>
                         </div>
-
+            
                         <div class="check_normal">
-                            <input type="checkbox" id="agree_02" class="blind">
+                            <input type="checkbox" id="agree_02" name="checkboxes">
                             <label for="agree_02">
                                 <span class="text">고유식별정보 처리</span>
                             </label>
@@ -188,9 +184,9 @@
                                 <span class="blind">약관 전문보기</span>
                             </a>
                         </div>
-
+            
                         <div class="check_normal">
-                            <input type="checkbox" id="agree_03" class="blind">
+                            <input type="checkbox" id="agree_03" name="checkboxes">
                             <label for="agree_03">
                                 <span class="text">통신사 이용약관</span>
                             </label>
@@ -200,7 +196,7 @@
                         </div>
             
                         <div class="check_normal">
-                            <input type="checkbox" id="agree_04" class="blind">
+                            <input type="checkbox" id="agree_04" name="checkboxes">
                             <label for="agree_04">
                                 <span class="text">인증사 이용약관</span>
                             </label>
@@ -210,7 +206,7 @@
                         </div>
                                 
                         <div class="check_normal">
-                            <input type="checkbox" id="agree_05" class="blind">
+                            <input type="checkbox" id="agree_05" name="checkboxes">
                             <label for="agree_05">
                                 <span class="text">네이버 개인정보수집</span>
                             </label>

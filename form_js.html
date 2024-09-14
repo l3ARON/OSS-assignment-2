@@ -39,8 +39,7 @@
         }
         #pswd2{
             border-radius: 0px 0px 4px 4px;
-            margin: -1px 0px 0px;
-            margin-bottom: 10px;
+            margin: -1px 0px 5px;
         }
         #passwordhintQ{
             border-radius: 4px 4px 0px 0px ;
@@ -103,6 +102,10 @@
         #bottom{
             margin-top: 20px;
         }
+        #check_button{
+            padding-bottom: 10px;
+            padding-left: 4px;
+        }
     </style>
 
     <script>
@@ -131,7 +134,32 @@
             let pswd2 = document.getElementById("pswd2").value;
             let name = document.getElementById("name").value;
             let birthdayInput = document.getElementById("birthdayInput").value
-            
+
+            let radiosgender = document.getElementsByName("identityGender");
+            let radiosforigner = document.getElementsByName("foreigner");
+            let Checked1, Checked2 = false;
+
+            let phoneNo = document.getElementById("phoneNo").value;
+
+            let Check1 = document.getElementById("Check1");
+            let Check2 = document.getElementById("agree_01");
+            let Check3 = document.getElementById("agree_02");
+            let Check4 = document.getElementById("agree_03");
+            let Check5 = document.getElementById("agree_04");
+            let Check6 = document.getElementById("agree_05");
+
+            for (let i = 0; i < 2; i++) {
+                if (radiosgender[i].checked) {
+                    Checked1 = true;
+                }
+                if(radiosforigner[i].checked){
+                    Checked2 = true;
+                }
+                if(Checked1 === true && Checked2 === true){
+                    break;
+                }
+            }
+
             if(id === ""){
                 alert("아이디를 입력해주세요")
             }
@@ -144,7 +172,33 @@
             else if(birthdayInput === ""){
                 alert("생년월일을 입력해주세요")
             }
-           
+            else if (!Checked1) {
+                alert("성별을 선택해 주세요.");
+            } 
+            else if (!Checked2) {
+                alert("국적을 선택해 주세요.");
+            }
+            else if (phoneNo === ""){
+                alert("전화번호를 입력해주세요.");
+            }
+            else if(!Check1.checked){
+                alert("'실명 인증된 아이디로 가입'에 체크해 주세요");
+            }
+            else if(!Check2.checked){
+                alert("'개인정보 이용'에 체크해 주세요");
+            }
+            else if(!Check3.checked){
+                alert("'고유식별정보 처리'에 체크해 주세요");
+            }
+            else if(!Check4.checked){
+                alert("'통신사 이용약관'에 체크해 주세요");
+            }
+            else if(!Check5.checked){
+                alert("'인증사 이용약관'에 체크해 주세요");
+            }
+            else if(!Check6.checked){
+                alert("'네이버 개인정보수집'에 체크해 주세요");
+            }
         }
 
     </script>
@@ -165,9 +219,9 @@
         <div class="form_content">
             <form id="join_form" method="post" action="/user2/join/end" class="form"></form>
                 <!--체크박스 type = checkbox -->
-                <div class="join_toggle" id="divToggle">
-                    <input type="checkbox" id="join_toggle">
-                    <label for="join_toggle">실명 인증된 아이디로 가입</label>
+                <div id="divToggle">
+                    <input type="checkbox" id="Check1" name="Check1">
+                    <label for="Check1">실명 인증된 아이디로 가입</label>
                 </div>
 
                 <div id="top">
@@ -179,7 +233,7 @@
                     <div class="form_item lock password" id="divPasswd">
                         <input type="password" id="pswd1" name="pswd1" placeholder="비밀번호" class="input" value="" maxlength="20" required/>
                         <input type="password" id="pswd2" name="pswd2" placeholder="비밀번호 (재입력)" class="input" value="" maxlength="20" required/>
-                        <button type="button" onclick="checkPasswords()">비밀번호 확인</button>
+                        <div id="check_button"><button type="button" onclick="checkPasswords()">비밀번호 확인</button></div>
                         <div id="hint">
                             <div >
                                 <p id="hint1">[선택] 비밀번호를 찾을 때 사용할 문제와 정답을 입력하세요</p>
