@@ -5,52 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-<body>
-
-    <style>
-        .background_brown{
-            background-color: brown;
-        }
-    </style>
-
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <div id="div_123">123</div>
-    <div class="div_456">4</div>
-    <div class="div_456">5</div>
-    <div class="div_456">6</div>
 
-    <input id="input_01" class="fomr_class">
-    <!--클래스는 여러개 적용 가능-->
-    <button type="button" class="btn btn-primary" onclick="getInputvalue()">값 가져오기</button>
+<!--
+제작하고 싶은 CRUD Front page의 주제를 결정, 
+어떤 항목들로 데이터 세트를 구성할 것인지 정한다. (6개 이상의 항목이 포함되어야 함)
 
-    <!--아이디는 #, 클래스는 .-->
-    <script>
-        function getInputvalue(){
-            
-            let input_01 = $("#input_01").val();
-            alert(input_01);    //기존 JS기능
-        
-            $("#input_01").val("new.value!!");
-            $("#div_123").css("background-color", "red");  //J-쿼리 기능이기에 $표시 사용
+(축구선수)
+등번호 - 이름 - 포지션 - 국적 - 키 - 몸무게 - 나이 
 
-            $("#div_456").addClass("background_brown");
-            //$("#div_456").removeClass("background_brown");
-
-            alert()
-        }
-        
-        let id_123 = $("#div_123");
-        //alert($("#div_123").html());
-        alert(id_123.html());
-
-        let class_456 = $(".div_456");
-        alert($(".div_456").length);
-
-        for(let i=0;i<div_456.length;i++){
-            
+edit.html 제작
+임의로 넣은 레코드의 모든 항목을 보여주면서 수정할 수 있도록 하는 Form 페이지
+- add.html과 동일한 Validation Check Javascript 적용할 것
+- [확인] 버튼을 누르면 “게시물을 수정할까요?” Confirm 창 띄울 것
+- [취소] 버튼을 누르면 index.html로 이동할 것.
+-->
+    <script type="text/javascript">
+        function showConfirm() {
+            var result = confirm("이 작업을 수행하시겠습니까?");
+            if (result) {
+                alert("확인 버튼을 클릭했습니다.");
+            } else {
+                alert("취소 버튼을 클릭했습니다.");
+            }
         }
     </script>
-    
+</head>
+<body>
+    <a href="edit.html">수정</a>
+    <a href="index.html">취소</a>
+    <button onclick="showConfirm()">확인</button>
 </body>
 </html>

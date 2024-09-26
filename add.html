@@ -55,6 +55,18 @@ add.html 제작
         <!--주발 입력받기, 왼발/오른발/양발 선택할 수 있게-->
         <!--포지션 입력받기, ST / LW / RW / CAM / CM / CDM / LM / RM / RB / CB / LB / GK -->
         <form action="index.html">
+            <!-- 포지션 입력받기, ST / LW / RW / CAM / CM / CDM / LM / RM / RB / CB / LB / GK -->
+            <div class="mb-3">
+                <label for="select_position">포지션</label>
+                <select id="select_position" name="position" class="form-select" aria-label="Default select example">
+                    <option selected>포지션</option>
+                    <option value="FW">FW</option>
+                    <option value="MF">MF</option>
+                    <option value="DF">DF</option>
+                    <option value="GK">GK</option>
+                </select>
+            </div>
+            
             <div class="mb-3">
                 <!-- 1. 이름 입력받기, only 한글-->
                 <label for="firstname_required" class="form-label">성</label>
@@ -65,11 +77,7 @@ add.html 제작
                 <label for="name_required" class="form-label">이름</label>
                 <input class="form-control" type="text" id="name" name="name_required">
             </div>
-            <div class="mb-3">
-                <!-- 2. 등번호 입력받기, 0 ~ 99, 숫자만 입력받음-->
-                <label for="backnumber_required" class="form-label">등번호</label>
-                <input class="form-control" type="number" id="backnumber" name="backnumber_required">
-            </div>
+            
             <div class="mb-3">
                  <!-- 3. 키 입력받기, 140 ~ 240, 숫자만 입력 받음 -->
                 <label for="cm_required" class="form-label">키</label>
@@ -80,6 +88,12 @@ add.html 제작
                 <!-- 4. 몸무게 입력받기, 40 ~ 200, 숫자만 입력받음 -->
                 <label for="kg_required" class="form-label">몸무게</label>
                 <input class="form-control" type="number" id="kg" name="kg_required">
+            </div>
+
+            <div class="mb-3">
+                <!-- 2. 등번호 입력받기, 0 ~ 99, 숫자만 입력받음-->
+                <label for="backnumber_required" class="form-label">등번호</label>
+                <input class="form-control" type="number" id="backnumber" name="backnumber_required">
             </div>
 
             <!-- 5. 주발 입력받기, 왼발/오른발/양발 선택할 수 있게-->
@@ -98,25 +112,7 @@ add.html 제작
                 </div>
             </div>
             
-            <!-- 포지션 입력받기, ST / LW / RW / CAM / CM / CDM / LM / RM / RB / CB / LB / GK -->
-            <div class="mb-3">
-                <label for="select_position">포지션</label>
-                <select id="select_position" name="position" class="form-select" aria-label="Default select example">
-                    <option selected>포지션</option>
-                    <option value="ST">ST</option>
-                    <option value="LW">LW</option>
-                    <option value="RW">RW</option>
-                    <option value="CAM">CAM</option>
-                    <option value="CM">CM</option>
-                    <option value="CDM">CDM</option>
-                    <option value="LM">LM</option>
-                    <option value="RM">RM</option>
-                    <option value="RB">RB</option>
-                    <option value="CB">CB</option>
-                    <option value="LB">LB</option>
-                    <option value="GK">GK</option>
-                </select>
-            </div>
+            
             <input type="submit" value="제출">
         </form>
     </div>
