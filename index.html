@@ -16,7 +16,7 @@
     }
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
+    .row.content {height: 450px;}
     
     /* Set gray background color and 100% height */
     .sidenav {
@@ -37,6 +37,7 @@
       padding: 10px;
       margin: 20px;
       float: left;
+      color: white;
     }
 
     .sideimg{
@@ -68,41 +69,44 @@
         float: none;
       }
     }
+
+    /* Custom media query for screen width less than 500px */
+    @media only screen and (max-width: 500px) {
+      .sidenav {
+        display: none;
+      }
+      .row.content {
+        height: auto;
+      }
+      .navbar-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #add {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        margin: 0;
+        padding: 7px 14px;
+        background-color: red;
+        color: white;
+        border-radius: 5px;
+        z-index: 1000;
+      }
+      .logo {
+        margin-bottom: 10px;
+      }
+    }
   </style>
 </head>
-<!--
-index.html 제작
-- 주요 입력항목을 기준으로 임의의 내용으로 채워진 목록 페이지 (최소 10개 이상의 목록이 보여야 함) o
-- 위에서 기획한 데이터 항목 중 4개 이상의 항목이 목록에 표시되어야함 o
-- [추가] 버튼이 보여야 함 o
-
-my.css 제작
-- 제작하는 모든 페이지는 공통 스타일을 적용
-  desktop용 / phone용을 기준으로 2개 이상의 device를 위한 RWD를 적용한다.
-- RWD 적용을 위한 style 및 따로 추가한 style은 my.css에 넣고 모든 파일에서 불러서 적용시킨다.
-- 그 외에, Bootstrap framework 등 다양한 템플릿 스타일을 선택하여 CDN으로 적용가능
-
-Self-Check items
-- 당신의 CRUD Frontend Service의 주제는 무엇인가?
-    한국 축구 국가대표팀 명단
-- 이 서비스에서 사용하는 모든 입력항목과 종류(type)를 적으시오.(6개 이상)
-- 목록 페이지(index.html)에서 표시하는 항목을 모두 적으시오. (4개 이상)
-- 추가(add.html),수정(edit.html) 페이지에서 사용하는 Validation Check의조건을 모두 적으시오. (4개 이상)
-- index.html로부터 제작한 모든 페이지로 자연스럽게 이동하고 있는가?
-- 제작한 모든 페이지는 RWD(Responsive Web Design)이 적용되어, 2개 이상의 장치에 맞추어 스타일이 적용되었는가?
--->
 <body>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-header" href="view.html"><img src="KFA+BI 로고-02.png" alt="" class="logo"></a>
-      <a href="./add.html" id="add" style="color: white;">추가</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <div class="nav navbar-nav">
-        
-      </div>
+      <a href="./add.html" id="add">추가</a>
     </div>
   </div>
 </nav>
