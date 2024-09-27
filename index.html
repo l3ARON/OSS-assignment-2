@@ -7,93 +7,34 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-      background-color: red;
-    }
-    .row.content {height: 450px;}
-    .sidenav {
-      margin-top: 10px;
-      height: 100%;
-      background-color: #f1f1f1;
-    }
-
-    .navbar-header{
-      height: 100px;
-      width: auto;
-    }
-
-    #add{
-      font-weight: 600;
-      font-size: large;
-      border: solid;
-      padding: 10px;
-      margin: 20px;
-      float: left;
-      color: white;
-    }
-
-    .sideimg{
-      width: 100%;
-      height: auto;
-      margin-top: 20px;
-    }
-
-    .logo{
-      height: 90%;
-      width: auto;
-    }
-
-    @media only screen and (max-width: 768px) {
-      .sidenav {
-        display: none;
-      }
-      .row.content {
-        height: auto;
-      }
-      .navbar-header {
-        display: flex;
-        align-items: center;
-      }
-      #add {
-        margin: 0;
-        padding: 10px;
-        float: none;
-      }
-    }
-
-    /* Custom media query for screen width less than 500px */
-    @media only screen and (max-width: 500px) {
-      .sidenav {
-        display: none;
-      }
-      .row.content {
-        height: auto;
-      }
-      .navbar-header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      #add {
-        position: fixed;
-        right: 20px;
-        bottom: 20px;
-        margin: 0;
-        padding: 7px 14px;
-        background-color: red;
-        color: white;
-        border-radius: 5px;
-        z-index: 1000;
-      }
-      .logo {
-        margin-bottom: 10px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="my.css">
 </head>
+<!--
+서비스 기획 - CRUD Front page
+한국 축구 국가대표팀 명단
+포지션 - 성 - 이름 - 키 - 몸무게 - 등번호 - 주발
+
+○ index.html 제작
+- 주요 입력항목을 기준으로 임의의 내용으로 채워진 목록 페이지 (최소 10개 이상의 목록이 보여야 함) o
+- 위에서 기획한 데이터 항목 중 4개 이상의 항목이 목록에 표시되어야함 o
+- [추가] 버튼이 보여야 함 o
+
+○ my.css 제작
+- 제작하는 모든 페이지는 공통 스타일을 적용하되 desktop용 / phone용을 기준으로 2개 이상의 device를 위한 RWD를 적용한다.
+- RWD 적용을 위한 style 및 따로 추가한 style은 my.css에 넣고 모든 파일에서 불러서 적용시킨다.
+- 그 외에, Bootstrap framework 등 다양한 템플릿 스타일을 선택하여 CDN으로 적용시킬 수 있다.
+-->
+<!--
+Self-Check items
+- #2-1에서 등록한 github repo와 netlify에서 사이트를 그대로 사용했는가?
+- 당신의 CRUD Frontend Service의 주제는 무엇인가?
+- 이 서비스에서 사용하는 모든 입력항목과 종류(type)를 적으시오.(6개 이상)
+- 목록 페이지(index.html)에서 표시하는 항목을 모두 적으시오. (4개 이상)
+- 추가(add.html),수정(edit.html) 페이지에서 사용하는 Validation Check의 조건을 모두 적으시오. (4개 이상)
+- index.html로부터 제작한 모든 페이지로 자연스럽게 이동하고 있는가?
+- 제작한 모든 페이지는 RWD(Responsive Web Design)이 적용되어, 2개 이상의 장치에 맞추어 스타일이 적용되었는가?
+- 현재까지 프로젝트를 구현하면서 소감, 어려움, 또는 건의사항은 무엇인가?.
+-->
 <body>
 
 <nav class="navbar navbar-inverse">
