@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>index</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -12,6 +12,7 @@
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
+      background-color: red;
     }
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -20,57 +21,88 @@
     /* Set gray background color and 100% height */
     .sidenav {
       margin-top: 10px;
-      background-color: #f1f1f1;
       height: 100%;
+      background-color: #f1f1f1;
     }
-    
-    img{
+
+    .navbar-header{
+      height: 100px;
+      width: auto;
+    }
+
+    #add{
+      font-weight: 600;
+      font-size: large;
+      border: solid;
+      padding: 10px;
+      margin: 20px;
+      float: left;
+    }
+
+    .sideimg{
       width: 100%;
       height: auto;
+      margin-top: 20px;
     }
-    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
+
+    .logo{
+      height: 90%;
+      width: auto;
     }
+
     /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
+    @media only screen and (max-width: 768px) {
       .sidenav {
-        height: auto;
-        padding: 15px;
+        display: none;
       }
-      .row.content {height:auto;} 
+      .row.content {
+        height: auto;
+      }
+      .navbar-header {
+        display: flex;
+        align-items: center;
+      }
+      #add {
+        margin: 0;
+        padding: 10px;
+        float: none;
+      }
     }
   </style>
 </head>
 <!--
 index.html 제작
-- 주요 입력항목을 기준으로 임의의 내용으로 채워진 목록 페이지 (최소 10개 이상의 목록이 보여야 함)
-- 위에서 기획한 데이터 항목 중 4개 이상의 항목이 목록에 표시되어야함
-- [추가] 버튼이 보여야 함
+- 주요 입력항목을 기준으로 임의의 내용으로 채워진 목록 페이지 (최소 10개 이상의 목록이 보여야 함) o
+- 위에서 기획한 데이터 항목 중 4개 이상의 항목이 목록에 표시되어야함 o
+- [추가] 버튼이 보여야 함 o
+
+my.css 제작
+- 제작하는 모든 페이지는 공통 스타일을 적용
+  desktop용 / phone용을 기준으로 2개 이상의 device를 위한 RWD를 적용한다.
+- RWD 적용을 위한 style 및 따로 추가한 style은 my.css에 넣고 모든 파일에서 불러서 적용시킨다.
+- 그 외에, Bootstrap framework 등 다양한 템플릿 스타일을 선택하여 CDN으로 적용가능
+
+Self-Check items
+- 당신의 CRUD Frontend Service의 주제는 무엇인가?
+    한국 축구 국가대표팀 명단
+- 이 서비스에서 사용하는 모든 입력항목과 종류(type)를 적으시오.(6개 이상)
+- 목록 페이지(index.html)에서 표시하는 항목을 모두 적으시오. (4개 이상)
+- 추가(add.html),수정(edit.html) 페이지에서 사용하는 Validation Check의조건을 모두 적으시오. (4개 이상)
+- index.html로부터 제작한 모든 페이지로 자연스럽게 이동하고 있는가?
+- 제작한 모든 페이지는 RWD(Responsive Web Design)이 적용되어, 2개 이상의 장치에 맞추어 스타일이 적용되었는가?
 -->
 <body>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-header" href="view.html"><img src="KFA+BI 로고-02.png" alt="" class="logo"></a>
+      <a href="./add.html" id="add" style="color: white;">추가</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="./add.html">추가</a></li>
-
-      </ul>
-      <ul class="nav navbar-nav navbar-right"><!--우상단-->
+      <div class="nav navbar-nav">
         
-      </ul>
+      </div>
     </div>
   </div>
 </nav>
@@ -78,8 +110,7 @@ index.html 제작
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
-      <img src="신로고.png" alt="">
-      <img src="구로고.png" alt="">
+      <img src="KFA.svg" alt="" class="sideimg">
     </div>
     <div class="col-sm-8 text-left"> 
       <table class="table table-striped">
@@ -180,7 +211,7 @@ index.html 제작
       </table>
     </div>
     <div class="col-sm-2 sidenav">
-      
+      <img src="KFA.svg" alt="" class="sideimg">
     </div>
     </div>
   </div>
