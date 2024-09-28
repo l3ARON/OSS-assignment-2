@@ -7,43 +7,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="my.css">
     <title>Add Player</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 110vh;
-            margin: 0;
-            background-color: #f1f1f1;
-        }
-        .container {
-            position: relative;
-            width: 500px;
-            height: auto;
-            background-color: cornsilk;
-            padding: 20px;
-        }
-        .butt1, .butt2, .butt3{
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-        }
-        div{
-            margin-top: 5px;
-        }
-        @media (max-width: 500px) {
-            .row {
-                flex-direction: column;
-            }
-            .col {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-            body{
-                height: 100vh;
-            }
-        }
-    </style>
     <script>
         function checkcheck() {
             event.preventDefault();
@@ -106,10 +69,10 @@
 - [확인] 버튼을 누르면 “게시물이 추가됩니다” Alert 창 띄울 것 o
 - [취소] 버튼을 누르면 index.html로 이동할 것. o
 -->
-<body>
-    <div class="container">
+<body class="body_addedit">
+    <div class="container_add add_div">
         <form action="index.html" id="playerForm">
-            <div class="mb-3">
+            <div class="mb-3 add_div">
                 <!-- 1. 포지션 입력받기 -->
                 <label for="select_position">포지션</label>
                 <select id="select_position" name="position" class="form-select" aria-label="Default select example">
@@ -121,49 +84,49 @@
                 </select>
             </div>
 
-            <div class="row" id="name">
-                <div class="col">
+            <div class="row add_div" id="name">
+                <div class="col add_div">
                     <label for="firstname">성</label>
                     <input type="text" id="firstname" class="form-control" placeholder="성" aria-label="First name">
                 </div>
-                <div class="col">
+                <div class="col add_div">
                     <label for="backname">이름</label>
                     <input type="text" id="backname" class="form-control" placeholder="이름" aria-label="Last name">
                 </div>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 add_div">
                 <label for="cm_required" class="form-label">나이</label>
                 <input class="form-control" type="number" id="old" name="old_required" placeholder="(만) 세">
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 add_div">
                 <label for="cm_required" class="form-label">키</label>
                 <input class="form-control" type="number" id="cm" name="cm_required" placeholder="키(cm)">
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 add_div">
                 <label for="kg_required" class="form-label">몸무게</label>
                 <input class="form-control" type="number" id="kg" name="kg_required" placeholder="몸무게(kg)">
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 add_div">
                 <label for="backnumber_required" class="form-label">등번호</label>
                 <input class="form-control" type="number" id="backnumber" name="backnumber_required" placeholder="등번호">
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 add_div">
                 <label>주발</label>
-                <div>
-                    <div class="form-check">
+                <div class="add_div">
+                    <div class="form-check add_div">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">왼발</label>
                     </div>
-                    <div class="form-check">
+                    <div class="form-check add_div">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                         <label class="form-check-label" for="flexRadioDefault2">오른발</label>
                     </div>
-                    <div class="form-check">
+                    <div class="form-check add_div">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
                         <label class="form-check-label" for="flexRadioDefault3">양발</label>
                     </div>

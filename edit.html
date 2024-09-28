@@ -7,43 +7,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>edit Player</title>
     <link rel="stylesheet" href="my.css">
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 110vh;
-            margin: 0;
-            background-color: #f1f1f1;
-        }
-        .container {
-            position: relative;
-            width: 500px;
-            height: auto;
-            background-color: cornsilk;
-            padding: 20px;
-        }
-        .butt1, .butt2, .butt3{
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-        }
-        div{
-            margin-top: 5px;
-        }
-        @media (max-width: 500px) {
-            .row {
-                flex-direction: column;
-            }
-            .col {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-            body{
-                height: 100vh;
-            }
-        }
-    </style>
     <script>
         function checkcheck() {
             event.preventDefault();
@@ -118,7 +81,7 @@ edit.html 제작
 - [확인] 버튼을 누르면 “게시물을 수정할까요?” Confirm 창 띄울 것
 - [취소] 버튼을 누르면 index.html로 이동할 것.
 -->
-<body>
+<body class="body_addedit">
     <div class="container">
         <form action="index.html" id="playerForm">
             <div class="mb-3">

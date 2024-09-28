@@ -32,49 +32,6 @@ view.html 제작
         }
     </script>
 </head>
-<style>
-    .header {
-      background-color: red;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center; 
-      height: 100px; 
-      padding-left: 20px; 
-    }
-
-    .butt1{
-        margin-left: 5px;
-    }
-    .butt{
-        margin-left: 5px;
-        visibility: hidden;
-        
-    }
-    .button{
-        margin-left: 10px;
-        width: 210px;
-    }
-    .logo{
-        height: 100%;
-        width: auto;
-    }
-    /*기본 글자 크기*/
-    body{
-        font-size: 16px;
-    }
-    /* 너비가 600px 이하*/
-    @media (max-width: 600px) {
-        body {
-            font-size: 12px;
-        }
-        .table th, .table td {
-            font-size: 12px;
-        }
-        .logo{
-            display: none;
-        }
-    }
-</style>
 <!--
 ○ view.html 제작
 - index.html의 목록 중에서 제목을 눌렀을 때 나오는 페이지
@@ -84,7 +41,7 @@ view.html 제작
 - [삭제] 버튼을 누르면 “게시물을 삭제할까요?” Confirm 창 띄울 것
 - [목록] 버튼을 누르면 index.html로 이동할 것.
 -->
-<body>
+<body class="body_view">
     <div class="header" style="background-color: red;">
         <img src="KFA+BI 로고-02.png" alt="" class="logo">
         <div class="button">
@@ -118,7 +75,7 @@ view.html 제작
                 <td>오른발</td>
                 <td>
                     <a class="btn btn-primary btn-sm butt" href="edit.html" role="button">수정</a>
-                    <button type="button" class="btn btn-dark btn-sm butt1" onclick="showConfirm()">삭제</button>
+                    <button type="button" class="btn btn-dark btn-sm butt12" onclick="showConfirm()">삭제</button>
                 </td>
             </tr>
             <tr>
@@ -131,8 +88,8 @@ view.html 제작
                 <td>7</td>
                 <td>양발</td>
                 <td>
-                    <a class="btn btn-primary btn-sm butt1" href="edit.html" role="button">수정</a>
-                    <button type="button" class="btn btn-dark btn-sm butt1" onclick="showConfirm()">삭제</button>
+                    <a class="btn btn-primary btn-sm butt12" href="edit.html" role="button">수정</a>
+                    <button type="button" class="btn btn-dark btn-sm butt12" onclick="showConfirm()">삭제</button>
                 </td>
             </tr>
             <tr>
@@ -146,7 +103,7 @@ view.html 제작
                 <td>오른발</td>
                 <td>
                     <a class="btn btn-primary btn-sm butt" href="edit.html" role="button">수정</a>
-                    <button type="button" class="btn btn-dark btn-sm butt1" onclick="showConfirm()">삭제</button>
+                    <button type="button" class="btn btn-dark btn-sm butt12" onclick="showConfirm()">삭제</button>
                 </td>
             </tr>
             <tr>
@@ -160,7 +117,7 @@ view.html 제작
                 <td>왼발</td>
                 <td>
                     <a class="btn btn-primary btn-sm butt" href="edit.html" role="button">수정</a>
-                    <button type="button" class="btn btn-dark btn-sm butt1" onclick="showConfirm()">삭제</button>
+                    <button type="button" class="btn btn-dark btn-sm butt12" onclick="showConfirm()">삭제</button>
                 </td>
             </tr>
             <tr>
@@ -174,7 +131,7 @@ view.html 제작
                 <td>왼발</td>
                 <td>
                     <a class="btn btn-primary btn-sm butt" href="edit.html" role="button">수정</a>
-                    <button type="button" class="btn btn-dark btn-sm butt1" onclick="showConfirm()">삭제</button>
+                    <button type="button" class="btn btn-dark btn-sm butt12" onclick="showConfirm()">삭제</button>
                 </td>
             </tr>
             <tr>
@@ -188,7 +145,7 @@ view.html 제작
                 <td>오른발</td>
                 <td>
                     <a class="btn btn-primary btn-sm butt" href="edit.html" role="button">수정</a>
-                    <button type="button" class="btn btn-dark btn-sm butt1" onclick="showConfirm()">삭제</button>
+                    <button type="button" class="btn btn-dark btn-sm butt12" onclick="showConfirm()">삭제</button>
                 </td>
             </tr>
             <tr>
@@ -202,7 +159,7 @@ view.html 제작
                 <td>양발</td>
                 <td>
                     <a class="btn btn-primary btn-sm butt" href="edit.html" role="button">수정</a>
-                    <button type="button" class="btn btn-dark btn-sm butt1" onclick="showConfirm()">삭제</button>
+                    <button type="button" class="btn btn-dark btn-sm butt12" onclick="showConfirm()">삭제</button>
                 </td>
             </tr>
             <tr>
@@ -216,7 +173,7 @@ view.html 제작
                 <td>오른발</td>
                 <td>
                     <a class="btn btn-primary btn-sm butt" href="edit.html" role="button">수정</a>
-                    <button type="button" class="btn btn-dark btn-sm butt1" onclick="showConfirm()">삭제</button>
+                    <button type="button" class="btn btn-dark btn-sm butt12" onclick="showConfirm()">삭제</button>
                 </td>
             </tr>
             <tr>
@@ -230,7 +187,7 @@ view.html 제작
                 <td>왼발</td>
                 <td>
                     <a class="btn btn-primary btn-sm butt" href="edit.html" role="button">수정</a>
-                    <button type="button" class="btn btn-dark btn-sm butt1" onclick="showConfirm()">삭제</button>
+                    <button type="button" class="btn btn-dark btn-sm butt12" onclick="showConfirm()">삭제</button>
                 </td>
             </tr>
             <tr>
@@ -244,7 +201,7 @@ view.html 제작
                 <td>오른발</td>
                 <td>
                     <a class="btn btn-primary btn-sm butt" href="edit.html" role="button">수정</a>
-                    <button type="button" class="btn btn-dark btn-sm butt1" onclick="showConfirm()">삭제</button>
+                    <button type="button" class="btn btn-dark btn-sm butt12" onclick="showConfirm()">삭제</button>
                 </td>
             </tr>
             <tr>
@@ -258,7 +215,7 @@ view.html 제작
                 <td>오른발</td>
                 <td>
                     <a class="btn btn-primary btn-sm butt" href="edit.html" role="button">수정</a>
-                    <button type="button" class="btn btn-dark btn-sm butt1" onclick="showConfirm()">삭제</button>
+                    <button type="button" class="btn btn-dark btn-sm butt12" onclick="showConfirm()">삭제</button>
                 </td>
             </tr>
             <tr>
@@ -272,7 +229,7 @@ view.html 제작
                 <td>오른발</td>
                 <td>
                     <a class="btn btn-primary btn-sm butt" href="edit.html" role="button">수정</a>
-                    <button type="button" class="btn btn-dark btn-sm butt1" onclick="showConfirm()">삭제</button>
+                    <button type="button" class="btn btn-dark btn-sm butt12" onclick="showConfirm()">삭제</button>
                 </td>
             </tr>
         </tbody>
