@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20241024</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../img/star.jpg">
+    <style>
+        .data{
+            display: flex;
+        }
+        .data_in{
+            margin: 15px;
+        }
+        span{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button onclick="getDataFromJSONFile()">명단 보기</button>
+    </div>
+    
+    <div>
+        <div class="data" style="margin-bottom: 10px;">
+            <div style="margin-left: 10px;">
+                <span>NAME</span>
+                <input type="text" id="player_name" placeholder="이름"/><br>
+                <span>HEIGHT</span>
+                <input type="number" id="player_height" placeholder="키(cm)"/><br>
+                <span>WEIGHT</span>
+                <input type="number" id="player_weight" placeholder=" 몸무게(kg)"/><br>
+                <span>POSITION</span>
+                <select id="player_position">
+                    <option value="ATT">ATT</option>
+                    <option value="MID">MID</option>
+                    <option value="DEF">DEF</option>
+                </select><br>
+                <span>NUMBER</span>
+                <input type="number" id="player_number" placeholder="등번호"/>
+            </div>
+        </div>
+        <button onclick="createDataToJSONFile()">추가</button>
+    </div>
+
+    <div>
+        <input type="text" id="player_id" placeholder="수정하고 싶은 ID를 입력"/>
+        <button onclick="updateDataToJSONFile()">수정</button>
+    </div>
+
+    <div>
+        <input type="text" id="delete_id" placeholder="삭제하고 싶은 ID를 입력"/>
+        <button onclick="deleteDataFromJSONFile()">삭제</button>
+    </div>
+
+
+
+    <div class="data"> <!--데이터 들이 들어가는 곳 div-->
+        <div id="div_players_id" class="data_in">
+            <div>ID</div>
+            <!--여기에 값들이 들어감 -->
+        </div>
+        <div id="div_players_name" class="data_in">
+            <div>NAME</div>
+            <!--여기에 값들이 들어감 -->
+        </div>
+        <div id="div_players_height" class="data_in">
+            <div>HEIGHT</div>
+            <!--여기에 값들이 들어감 -->
+        </div>
+        <div id="div_players_weight" class="data_in">
+            <div>WEIGHT</div>
+            <!--여기에 값들이 들어감 -->
+        </div>
+        <div id="div_players_position" class="data_in">
+            <div>POSITION</div>
+            <!--여기에 값들이 들어감 -->
+        </div>
+        <div id="div_players_position_number" class="data_in">
+            <div>BACK NUMBER</div>
+            <!--여기에 값들이 들어감 -->
+        </div>
+    </div>
+    
+
+    <script>
+        function getDataFromJSONFile() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://localhost:3000/players");
+            xhr.setRequestHeader("content-type", "application/json");
+            xhr.send();
+
+            xhr.onload = () => { 
+                if (xhr.status === 200) {
+                // 각 div를 비워서 초기화
+                $("#div_players_id").html("<div>ID</div>");
+                $("#div_players_name").html("<div>NAME</div>");
+                $("#div_players_height").html("<div>HEIGHT</div>");
+                $("#div_players_weight").html("<div>WEIGHT</div>");
+                $("#div_players_position").html("<div>POSITION</div>");
+                $("#div_players_position_number").html("<div>BACK NUMBER</div>");
+
+                let players = JSON.parse(xhr.response);
+
+                players.forEach((item) => {
+                    // 각 속성을 해당하는 div에 추가
+                    $("#div_players_id").append("<div>" + item.id + "</div>");
+                    $("#div_players_name").append("<div>" + item.name + "</div>");
+                    $("#div_players_height").append("<div>" + item.height + " cm</div>");
+                    $("#div_players_weight").append("<div>" + item.weight + " kg</div>");
+                    $("#div_players_position").append("<div>" + item.position + "</div>");
+                    $("#div_players_position_number").append("<div>" + item.number + "</div>");
+                });
+                } else {
+                    console.error("데이터를 가져오는 데 실패했습니다.", xhr.statusText);
+                }
+            };
+        }
+
+        function createDataToJSONFile() {
+            const xhr = new XMLHttpRequest(); 
+            xhr.open("POST", "http://localhost:3000/players"); // URL 변경
+            xhr.setRequestHeader("content-type", "application/json; charset=UTF-8");
+
+            let data = {
+                name: $("#player_name").val(),
+                height: $("#player_height").val(),
+                weight: $("#player_weight").val(),
+                position: $("#player_position").val(),
+                number: $("#player_number").val()
+            };
+
+            xhr.send(JSON.stringify(data));
+            xhr.onload = () => { 
+                if(xhr.status === 201) {
+                    alert("등록 성공!");
+
+                    $("#player_name").val('');
+                    $("#player_height").val('');
+                    $("#player_weight").val('');
+                    $("#player_position").val('ATT');
+                    $("#player_number").val('');
+
+                    getDataFromJSONFile();
+                }
+            }
+        }
+        
+
+        function updateDataToJSONFile() {
+            let id = $("#player_id").val();
+            const xhr = new XMLHttpRequest(); 
+            xhr.open("PUT", "http://localhost:3000/players/" + id); // URL 변경
+            xhr.setRequestHeader("content-type", "application/json; charset=UTF-8");
+
+            let data = {
+                name: $("#player_name").val(),
+                height: $("#player_height").val(),
+                weight: $("#player_weight").val(),
+                position: $("#player_position").val(),
+                number: $("#player_number").val()
+            };
+
+            xhr.send(JSON.stringify(data));
+            xhr.onload = () => { 
+                if(xhr.status === 200) {
+                    alert("수정 성공!");
+                    $("#player_name").val('');
+                    $("#player_height").val('');
+                    $("#player_weight").val('');
+                    $("#player_position").val('ATT');
+                    $("#player_number").val('');
+                    $("#player_id").val('');
+                    getDataFromJSONFile();
+                }
+            }
+        }
+
+        function deleteDataFromJSONFile() {
+            let id = $("#delete_id").val();
+            const xhr = new XMLHttpRequest(); 
+            xhr.open("DELETE", "http://localhost:3000/players/" + id); // URL 변경
+            xhr.setRequestHeader("content-type", "application/json; charset=UTF-8");
+
+            xhr.send();
+            xhr.onload = () => { 
+                if(xhr.status === 200) {
+                    alert("삭제 성공!");
+                    $("#delete_id").val('');
+                    getDataFromJSONFile();
+                } else {
+                    alert("삭제 실패!");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

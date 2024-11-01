@@ -1,0 +1,84 @@
+{
+  "players": [
+    {
+      "name": "Lionel Messi",
+      "height": 170,
+      "weight": 72,
+      "position": "ATT",
+      "number": 10,
+      "id": "c3fe"
+    },
+    {
+      "name": "Cristiano Ronaldo",
+      "height": 187,
+      "weight": 83,
+      "position": "ATT",
+      "number": 7,
+      "id": "84a8"
+    },
+    {
+      "name": "N'Golo Kanté",
+      "height": 168,
+      "weight": 70,
+      "position": "MID",
+      "number": 7,
+      "id": "7db8"
+    },
+    {
+      "name": "Sergio Ramos",
+      "height": 183,
+      "weight": 82,
+      "position": "DEF",
+      "number": 4,
+      "id": "b104"
+    },
+    {
+      "name": "Kevin De Bruyne",
+      "height": 181,
+      "weight": 70,
+      "position": "MID",
+      "number": 17,
+      "id": "cb8f"
+    },
+    {
+      "name": "Virgil van Dijk",
+      "height": 193,
+      "weight": 92,
+      "position": "DEF",
+      "number": 4,
+      "id": "be63"
+    },
+    {
+      "name": "Neymar Jr.",
+      "height": 175,
+      "weight": 68,
+      "position": "ATT",
+      "number": 11,
+      "id": "ce59"
+    },
+    {
+      "name": "Paul Pogba",
+      "height": 191,
+      "weight": 84,
+      "position": "MID",
+      "number": 6,
+      "id": "4e9e"
+    },
+    {
+      "name": "Giorgio Chiellini",
+      "height": 185,
+      "weight": 75,
+      "position": "DEF",
+      "number": 3,
+      "id": "82e4"
+    },
+    {
+      "name": "Kylian Mbappé",
+      "height": 178,
+      "weight": 73,
+      "position": "ATT",
+      "number": 7,
+      "id": "265a"
+    }
+  ]
+}
